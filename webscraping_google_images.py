@@ -1,13 +1,12 @@
 import bs4 
 import requests
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import os
 import time
 
-
-
 #creating a directory to save images
-folder_name = 'Dataset-MajorProj-Sem8\dahi bhalla'
+folder_name = 'Dataset-MajorProj-Sem8\kanda_poha'
 if not os.path.isdir(folder_name):
     os.makedirs(folder_name)
 
@@ -21,9 +20,8 @@ def download_image(url, folder_name, num):
 
 chromePath=r'C:\Users\hp\Documents\Selenium_Proj\Drivers\chromedriver.exe'
 driver=webdriver.Chrome(chromePath)
-search_URL = "https://www.google.com/search?q=dahi bhalla&source=lnms&tbm=isch"
+search_URL = "https://www.google.com/search?q=kanda poha&source=lnms&tbm=isch"
 driver.get(search_URL)
-
 
 
 #//*[@id="islrg"]/div[1]/div[1]
@@ -65,7 +63,8 @@ for i in range(1, len_containers+1):
     xPath = """//*[@id="islrg"]/div[1]/div[%s]"""%(i)
 
     previewImageXPath = """//*[@id="islrg"]/div[1]/div[%s]/a[1]/div[1]/img"""%(i)
-    previewImageElement = driver.find_element_by_xpath(previewImageXPath)
+    previewImageElement = driver.find_element(By.XPATH, previewImageXPath)
+    # previewImageElement = driver.find_element_by_xpath(previewImageXPath)
     previewImageURL = previewImageElement.get_attribute("src")
     print("preview URL", previewImageURL)
 

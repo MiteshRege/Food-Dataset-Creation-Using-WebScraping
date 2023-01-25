@@ -6,7 +6,7 @@ import os
 import time
 
 #creating a directory to save images
-folder_name = 'Dataset-MajorProj-Sem8\kanda_poha'
+folder_name = 'Dataset-MajorProj-Sem8\gajar_halwa'
 if not os.path.isdir(folder_name):
     os.makedirs(folder_name)
 
@@ -20,7 +20,7 @@ def download_image(url, folder_name, num):
 
 chromePath=r'C:\Users\hp\Documents\Selenium_Proj\Drivers\chromedriver.exe'
 driver=webdriver.Chrome(chromePath)
-search_URL = "https://www.google.com/search?q=kanda poha&source=lnms&tbm=isch"
+search_URL = "https://www.google.com/search?q=gajar halwa&source=lnms&tbm=isch"
 driver.get(search_URL)
 
 
@@ -111,7 +111,7 @@ for i in range(1, len_containers+1):
             #making a timeout if the full res image can't be loaded
             currentTime = time.time()
 
-            if currentTime - timeStarted > 40:
+            if currentTime - timeStarted > 10:
                 print("Timeout! Will download a lower resolution image and move onto the next one")
                 break
 

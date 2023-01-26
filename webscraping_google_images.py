@@ -6,7 +6,7 @@ import os
 import time
 
 #creating a directory to save images
-folder_name = 'Dataset-MajorProj-Sem8\Mitesh_demo'
+folder_name = 'Dataset-MajorProj-Sem8\MiteshRege'
 if not os.path.isdir(folder_name):
     os.makedirs(folder_name)
 
